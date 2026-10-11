@@ -2,21 +2,23 @@
 
 **A third-person sci-fi escape gameplay prototype developed in Unreal Engine 5 using Blueprints.**
 
-![Core Escape — third-person gameplay](02_CoreCollection.png)
+![Core Escape — third-person gameplay](Media/Screenshots/02_CoreCollection.png)
 
-[**## Gameplay demonstration
+## Gameplay Demonstration
+
+Watch the **1-minute, 26-second gameplay demonstration** below, featuring exploration, core collection, terminal interaction, and the escape sequence.
 
 https://github.com/user-attachments/assets/e6fc9114-4400-43de-9bd8-286dbd5dd413
 
- (1 min 26 sec, MP4)**](CoreEscape_Gameplay_Demo_WebPreview.mp4) · [Developer profile](https://github.com/lukyi124)
+[Download the gameplay demo (MP4)](Media/Video/CoreEscape_Gameplay_Demo_WebPreview.mp4) · [Developer profile](https://github.com/lukyi124)
 
 ## Overview
 
-**Core Escape** is a timed objective-based game set inside a futuristic research facility surrounded by an arctic landscape. The player must explore the installation, collect energy cores, activate control terminals, and escape through an exit door before the countdown reaches zero.
+**Core Escape** is a timed, objective-based game set inside a futuristic research facility surrounded by an arctic landscape. The player must explore the installation, collect energy cores, activate control terminals, and escape through an exit door before the countdown reaches zero.
 
 This project focuses on **Blueprint gameplay programming, reusable interaction logic, game-state management, UI, data-driven configuration, and integrating gameplay into a modular environment**. The underlying sci-fi environment uses third-party asset packs; the gameplay systems and adaptation for this prototype were developed as part of the project.
 
-### Mission objectives
+### Mission Objectives
 
 | Objective | Requirement |
 | --- | --- |
@@ -41,19 +43,19 @@ The HUD displays the remaining time and the progress of both objectives. The exi
 >
 > **Energy cores** are collected by touching / overlapping them; they do not require the E key.
 
-## Implemented features
+## Implemented Features
 
 ### Gameplay and Blueprints
 
 - **Third-person character** with movement and jump controls.
-- **Energy core pickup system** driven by collision overlaps, with a rotating visual presentation for the collectibles.
-- **Terminal interaction system** using proximity detection, the `E` key, `IA_Interact`, and a one-time activation path.
+- **Energy core pickup system** driven by collision overlaps, with rotating visual presentation for the collectibles.
+- **Terminal interaction system** using proximity detection, the `E` key, `IA_Interact`, and one-time activation logic.
 - **Blueprint Event Dispatchers** for communicating core collection and terminal activation events (`OnCoreCollected` and `OnTerminalActivated`).
 - **Centralized match flow** that tracks objectives, runs the countdown, and evaluates win/lose conditions.
 - **Exit door logic** that responds to objective completion and supports the final escape sequence.
 - **Restart flow** that correctly reloads the ArtPass gameplay map after winning or losing.
 
-### Interface, configuration, and persistence
+### Interface, Configuration, and Persistence
 
 - **Main menu** with *Play Game*, *Options*, and *Quit Game* actions.
 - **Real-time HUD** for cores, terminals, and remaining time.
@@ -61,18 +63,18 @@ The HUD displays the remaining time and the progress of both objectives. The exi
 - **Data-driven rules** through a Blueprint Structure and Data Table; the current configuration requires 3 cores, 3 terminals, and 150 seconds.
 - **Persistent master-volume setting** using a SaveGame object and GameInstance logic; the selected volume is restored when the game is reopened.
 
-### Environment and rendering
+### Environment and Rendering
 
 - Gameplay integrated into an existing **modular sci-fi installation** with arctic exterior scenery.
 - **Material and Material Instance experimentation** for metallic walls and cyan emissive accents.
 - **Lumen global illumination and reflections**, **Virtual Shadow Maps**, and controlled post-processing.
 - **Rect Lights, Point Lights, fog, exposure, color grading, and bloom** for a darker, cinematic sci-fi atmosphere.
 
-## Technical overview
+## Technical Overview
 
 The main gameplay logic is implemented with **Unreal Engine Blueprints**, rather than custom C++ gameplay code.
 
-| Asset / system | Responsibility |
+| Asset / System | Responsibility |
 | --- | --- |
 | `BP_GM_CoreEscape` | Match rules, objective counts, timer, and end-of-game state |
 | `BP_CoreEscapeCharacter` | Third-person player and interaction input handling |
@@ -88,21 +90,21 @@ The main gameplay logic is implemented with **Unreal Engine Blueprints**, rather
 | `SG_CoreEscapeSettings` | Saved master-volume setting |
 | `SC_Master` / `SM_MasterVolume` | Master audio control setup |
 
-### Gameplay event flow
+### Gameplay Event Flow
 
 ```text
 Lvl_MainMenu
     └─ Play Game → Lvl_CoreEscape_ArtPass
-                         ├─ Touch a core → BP_Core → OnCoreCollected
-                         ├─ Approach terminal + press E
-                         │      └─ IA_Interact → BP_Terminal → OnTerminalActivated
-                         ├─ BP_GM_CoreEscape updates counters + countdown
-                         ├─ All objectives complete → exit becomes available
-                         │      └─ Reach the exit → Victory screen
-                         └─ Timer expires → Defeat screen
+                        ├─ Touch a core → BP_Core → OnCoreCollected
+                        ├─ Approach terminal + press E
+                        │      └─ IA_Interact → BP_Terminal → OnTerminalActivated
+                        ├─ BP_GM_CoreEscape updates counters + countdown
+                        ├─ All objectives complete → exit becomes available
+                        │      └─ Reach the exit → Victory screen
+                        └─ Timer expires → Defeat screen
 ```
 
-### Level structure
+### Level Structure
 
 - **`Lvl_MainMenu`** — configured as the editor startup level and the default game map for the project.
 - **`Lvl_CoreEscape_ArtPass`** — current playable sci-fi level with all objectives and the escape sequence.
@@ -110,29 +112,29 @@ Lvl_MainMenu
 
 ## Screenshots
 
-**Main menu**
+### Main Menu
 
-![Main menu](01_MainMenu.png)
+![Main menu](Media/Screenshots/01_MainMenu.png)
 
-**Core collection and HUD**
+### Core Collection and HUD
 
-![Collectible core and HUD](02_CoreCollection.png)
+![Collectible core and HUD](Media/Screenshots/02_CoreCollection.png)
 
-**Terminal interaction area**
+### Terminal Interaction Area
 
-![Terminal interaction area](03_TerminalInteraction.png)
+![Terminal interaction area](Media/Screenshots/03_TerminalInteraction.png)
 
-**Mission complete**
+### Mission Complete
 
-![Victory screen](05_MissionComplete.png)
+![Victory screen](Media/Screenshots/05_MissionComplete.png)
 
-## Development highlights
+## Development Highlights
 
 Working on Core Escape provided hands-on practice with reusable Blueprint Actors, Event Dispatchers, overlap events, Enhanced Input, references between character and interactable Actors, UI widgets, Data Tables, GameMode/GameInstance responsibilities, SaveGame persistence, level transitions, debugging, and playtesting.
 
 The original prototype was iterated into a fully playable objective loop and then transferred into a prebuilt modular sci-fi setting, where interactable elements and a working escape route were placed and tested.
 
-## Third-party assets and credits
+## Third-Party Assets and Credits
 
 The environment geometry and visual content are **not presented as original 3D models created by the project developer**.
 
@@ -142,14 +144,12 @@ The environment geometry and visual content are **not presented as original 3D m
 
 Gameplay programming, objective systems, UI integration, data configuration, and gameplay adaptation are the focus of this portfolio project.
 
-**Distribution note:** Third-party marketplace assets remain subject to their respective license terms. This repository is intended to showcase the project through documentation and captured media; it does not grant permission to extract or redistribute marketplace asset source files. Any publication of Unreal project files must be reviewed for third-party asset licensing first. See the [Fab Standard License](https://www.fab.com/eula).
+**Distribution note:** Third-party marketplace assets remain subject to their respective license terms. This repository showcases the project through documentation and captured media; it does not grant permission to extract or redistribute marketplace asset source files. Any publication of Unreal project files must be reviewed for third-party asset licensing first. See the [Fab Standard License](https://www.fab.com/eula).
 
-## Project status
+## Project Status
 
-**Stable gameplay prototype (v1.0)** — gameplay loop, objectives, menus, settings persistence, and victory/defeat flow have been tested in Unreal Engine **5.8.3**.
+**Stable gameplay prototype (v1.0)** — gameplay loop, objectives, menus, settings persistence, and victory/defeat flow have been tested in **Unreal Engine 5.8.3**.
+
+This repository is a **portfolio showcase** containing documentation, screenshots, and gameplay footage; it does **not** include a complete Unreal Engine project or standalone playable build.
 
 Future polish may include replacing remaining placeholder interactable visuals and investigating Virtual Shadow Maps performance warnings in the imported environment. Features such as PCG, Niagara, and Nanite-focused optimization are **not claimed as implemented in this version**.
-
----
-
-**Developed by [lukyi124](https://github.com/lukyi124)** · Unreal Engine 5 · Blueprints · Gameplay Programming
