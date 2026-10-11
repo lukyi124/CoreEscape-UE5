@@ -2,9 +2,9 @@
 
 **A third-person sci-fi escape gameplay prototype developed in Unreal Engine 5 using Blueprints.**
 
-![Core Escape — third-person gameplay](media/screenshots/02_CoreCollection.png)
+![Core Escape — third-person gameplay](02_CoreCollection.png)
 
-[**Watch the gameplay demo (1 min 26 sec, MP4)**](media/video/CoreEscape_Gameplay_Demo_WebPreview.mp4) · [Developer profile](https://github.com/lukyi124)
+[**Watch the gameplay demo (1 min 26 sec, MP4)**](CoreEscape_Gameplay_Demo_WebPreview.mp4) · [Developer profile](https://github.com/lukyi124)
 
 ## Overview
 
@@ -108,19 +108,19 @@ Lvl_MainMenu
 
 **Main menu**
 
-![Main menu](media/screenshots/01_MainMenu.png)
+![Main menu](01_MainMenu.png)
 
 **Core collection and HUD**
 
-![Collectible core and HUD](media/screenshots/02_CoreCollection.png)
+![Collectible core and HUD](02_CoreCollection.png)
 
 **Terminal interaction area**
 
-![Terminal interaction area](media/screenshots/03_TerminalInteraction.png)
+![Terminal interaction area](03_TerminalInteraction.png)
 
 **Mission complete**
 
-![Victory screen](media/screenshots/05_MissionComplete.png)
+![Victory screen](05_MissionComplete.png)
 
 ## Development highlights
 
