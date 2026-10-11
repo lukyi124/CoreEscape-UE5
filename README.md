@@ -4,7 +4,11 @@
 
 ![Core Escape — third-person gameplay](02_CoreCollection.png)
 
-[**Watch the gameplay demo (1 min 26 sec, MP4)**](CoreEscape_Gameplay_Demo_WebPreview.mp4) · [Developer profile](https://github.com/lukyi124)
+[**## Gameplay demonstration
+
+https://github.com/user-attachments/assets/e6fc9114-4400-43de-9bd8-286dbd5dd413
+
+ (1 min 26 sec, MP4)**](CoreEscape_Gameplay_Demo_WebPreview.mp4) · [Developer profile](https://github.com/lukyi124)
 
 ## Overview
 
